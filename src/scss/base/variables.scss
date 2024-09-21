@@ -1,0 +1,44 @@
+// Root
+:root {
+    --white: #fff;
+    --gray100: #f7f8f8;
+    --gray200: #6c757d;
+    --gray300: #3d3d3d;
+    --gray400: #1f1416;
+}
+
+// Font
+$font_primary: "Roboto", sans-serif;
+$font_secondary: "Open Sans", sans-serif;
+
+// Breakpoint
+$breakpoint_sm: 576px;
+$breakpoint_md: 768px;
+$breakpoint_lg: 992px;
+$breakpoint_xl: 1200px;
+$breakpoint_xxl: 1400px;
+
+// Shadow
+$box_shadow_default: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+$box_shadow_hover: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+
+// Animation
+$animation_default: ease-in-out 0.3s;
+
+// Scrollbar
+$scrollbar_size: 6px;
+$scrollbar_track: var(--gray100);
+$scrollbar_thumb_color: var(--gray300);
+$scrollbar_thumb_border_radius: 4px;
+
+// Padding
+$padding_default: 40px;
+$padding_lg: 30px;
+$padding_sm: 20px;
+
+// Spacer
+$spacer_sm: 10px;
+$spacer_md: 20px;
+$spacer_lg: 30px;
+$spacer_xl: 40px;
+$spacer_xxl: 60px;

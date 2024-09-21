@@ -6,7 +6,10 @@ export function buildDevServer({ paths, port, domains }: BuildOptions): DevServe
         port: port ?? 3000,
         open: true,
         hot: false, // enaible for HMR
-        watchFiles: [paths.src],
+        watchFiles: [
+            '**/*.php', // track changes to all php files in a project
+            paths.src  // track changes to all files in src folder
+        ],
         devMiddleware: {
             writeToDisk: true,
         },

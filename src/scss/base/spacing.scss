@@ -1,0 +1,49 @@
+.py {
+    padding: $padding_default 0;
+    @include breakpoint(lg) {
+        padding: $padding_lg 0;
+    }
+    @include breakpoint(sm) {
+        padding: $padding_sm 0;
+    }
+}
+
+.pt {
+    padding-top: $padding_default;
+    @include breakpoint(lg) {
+        padding-top: $padding_lg;
+    }
+    @include breakpoint(sm) {
+        padding-top: $padding_sm;
+    }
+}
+
+.pb {
+    padding-bottom: $padding_default;
+    @include breakpoint(lg) {
+        padding-bottom: $padding_lg;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: $padding_sm;
+    }
+}
+
+.spacer {
+    display: block;
+    width: 100%;
+    &_sm {
+        height: $spacer_sm;
+    }
+    &_md {
+        height: $spacer_md;
+    }
+    &_lg {
+        height: $spacer_lg;
+    }
+    &_xl {
+        height: $spacer_xl;
+    }
+    &_xxl {
+        height: $spacer_xxl;
+    }
+}

@@ -4,7 +4,7 @@ export type BuildDomains = string[];
 export interface BuildPaths {
     entry: {
         app: string,
-        vendors: string,
+        // vendors: string,
         style: string,
     };
     output: string;

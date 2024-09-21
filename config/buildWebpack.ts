@@ -14,7 +14,7 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
         mode,
         entry: {
             app: paths.entry.app,
-            vendors: paths.entry.vendors,
+            // vendors: paths.entry.vendors,
             style: paths.entry.style,
         },
         output: {
@@ -30,5 +30,8 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
         optimization: buildOptimization(options),
         devtool: isDev ? 'eval-cheap-module-source-map' : 'source-map',
         devServer: isDev ? buildDevServer(options) : undefined,
+        externals: {
+            jquery: 'jQuery',
+        },
     }
 }

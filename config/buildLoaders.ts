@@ -29,44 +29,35 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     }
 
     const imageLoader = {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-            {
-                loader: 'url-loader',
-                options: {
-                    limit: 8192,
-                    name: 'img/[name].[ext]',
-                },
-            },
-            {
-                loader: 'image-webpack-loader',
-                options: {
-                    mozjpeg: {
-                        progressive: true,
-                    },
-                    optipng: {
-                        enabled: false,
-                    },
-                    pngquant: {
-                        quality: [0.65, 0.90],
-                        speed: 4,
-                    },
-                    gifsicle: {
-                        interlaced: false,
-                    },
-                    webp: {
-                        quality: 75,
-                    },
-                },
-            },
-
-        ],
+        test: /\.(png|jpe?g|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: 'img/[name][ext][query]',
+        },
     };
+    
+    const svgLoader = {
+        test: /\.svg$/i,
+        type: 'asset/resource',
+        generator: {
+            filename: 'img/[name][ext][query]',
+        },
+    };
+
+    const fontsLoader = {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        type: 'asset/resource',
+        generator: {
+            filename: 'fonts/[name][ext][query]'
+        }
+    }
 
 
     return [
         babelLoader,
         scssLoader,
-        // imageLoader,
+        fontsLoader,
+        imageLoader,
+        svgLoader,
     ]
 }

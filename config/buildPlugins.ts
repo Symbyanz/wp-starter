@@ -24,6 +24,8 @@ export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plug
                         ignore: [
                             '**/scss/**',
                             '**/ts/**',
+                            '**/fonts/**',
+                            // '**/img/**',
                         ],
                     },
                     noErrorOnMissing: true,
@@ -42,9 +44,13 @@ export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plug
                 test: /\.js(\?.*)?$/i,
                 extractComments: false,
                 terserOptions: {
-                    compress: {},
+                    compress: {
+                        drop_console: true,
+                        drop_debugger: true,
+                    },
                     mangle: true,
                 },
+                parallel: true, 
             }),
         );
     }
