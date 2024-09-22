@@ -14,7 +14,6 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
         mode,
         entry: {
             app: paths.entry.app,
-            // vendors: paths.entry.vendors,
             style: paths.entry.style,
         },
         output: {

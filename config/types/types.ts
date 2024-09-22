@@ -4,7 +4,6 @@ export type BuildDomains = string[];
 export interface BuildPaths {
     entry: {
         app: string,
-        // vendors: string,
         style: string,
     };
     output: string;
@@ -16,4 +15,8 @@ export interface BuildOptions {
     paths: BuildPaths;
     mode: BuildMode;
     domains?: BuildDomains;
+    httpsConfig?: {
+        key: Buffer;
+        cert: Buffer;
+    };
 }
